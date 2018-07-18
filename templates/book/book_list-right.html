@@ -1,0 +1,86 @@
+<div class="col-md-10 col-md-offset-1">
+    <h2>Show Books</h2>
+    <table class="table table-bordered table-striped">
+
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>书籍ID</th>
+            <th>书籍名称</th>
+            <th>价格</th>
+            <th>作者</th>
+            <th>出版日期</th>
+            <th>出版社</th>
+            <th>编辑操作</th>
+            <th>删除操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in current_page %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ book.id }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.price }}</td>
+                <td>
+                    {% for author in book.authors.all %}
+                        {% if forloop.last %}
+                            <span>{{ author.name }}</span>
+                        {% else %}
+                            <span>{{ author.name }}</span>,
+                        {% endif %}
+                    {% endfor %}
+                </td>
+
+                <td>{{ book.pub_date|date:'Y-m-d' }}</td>
+                <td>{{ book.publish.name }}</td>
+                <td><a href="" class="btn btn-info">编辑</a></td>
+                <td><a href="/book/delete_book/{{ book.pk }}" class="btn btn-danger">删除</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+
+            {#        上一页#}
+            {% if current_page.has_previous %}
+                <li>
+                    <a href="?page={{ current_page.previous_page_number }}" aria-label="Previous"><span
+                            aria-hidden="true">上一页</span></a>
+                </li>
+            {% else %}
+                <li class="disabled">
+                    <a href="" aria-label="Previous"><span aria-hidden="true">上一页</span></a>
+                </li>
+            {% endif %}
+
+
+            {#中间数字部分#}
+            {% for item in page_range %}
+                {% if item == current_page_num %}
+                    <li class="active"><a href="?page={{ item }}">{{ item }}</a></li>
+                {% else %}
+                    <li><a href="?page={{ item }}">{{ item }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+
+            {#    下一页#}
+            {% if current_page.has_next %}
+                <li>
+                    <a href="?page={{ current_page.next_page_number }}" aria-label="Next"><span
+                            aria-hidden="true">下一页</span></a>
+                </li>
+            {% else %}
+                <li class="disabled">
+                    <a href="" aria-label="Next"><span aria-hidden="true">下一页</span></a>
+                </li>
+            {% endif %}
+
+        </ul>
+    </nav>
+</div>
+
+

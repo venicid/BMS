@@ -121,6 +121,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# 静态文件目录
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
 
 # sql语句的logger
 LOGGING = {
@@ -144,4 +149,3 @@ LOGGING = {
 
 # 设置白名单
 WHITE_LIST = ["/", "/login/", "/reg/", "/logout/"]
-# WHITE_LIST = ["/"]
