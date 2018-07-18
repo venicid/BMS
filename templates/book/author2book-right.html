@@ -1,0 +1,30 @@
+<div class="col-md-10 col-md-offset-1">
+    <h2>{{ author_obj.name }} - Books</h2>
+    <table class="table table-bordered table-striped">
+
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>书籍ID</th>
+            <th>书籍名称</th>
+            <th>价格</th>
+            <th>出版日期</th>
+            <th>出版社</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in author_obj.book_set.all %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ book.id }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.price }}</td>
+                <td>{{ book.pub_date|date:'Y-m-d' }}</td>
+                <td>{{ book.publish.name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
