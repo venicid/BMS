@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>登录-BMS</title>
     <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.css">
+        <style type="text/css">
+        form > span {
+            color: red;
+            display: block;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-static-top">
@@ -30,6 +36,7 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <h2 class="text-center">Sign in</h2>
+
             <form action="" method="post">
                 {% csrf_token %}
                 <div class="form-group">
@@ -40,8 +47,12 @@
                     <label for="">Password</label>
                     <input type="password" class="form-control" name="password"/>
                 </div>
+                <span>{{ error_msg }}</span>
+                <br>
                 <input type="submit" class="btn btn-success pull-right" value="Sign in for BMS">
             </form>
+
+
         </div>
     </div>
 </div>
