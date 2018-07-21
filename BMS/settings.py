@@ -127,6 +127,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+# 日志文件目录
+LOGFILES_DIRS = os.path.join(BASE_DIR, 'log')
+
 
 # sql语句的logger
 LOGGING = {
@@ -152,3 +155,6 @@ LOGIN_URL = "/"
 
 # 设置登录注册白名单
 WHITE_LIST = ["/", "/login/", "/reg/", "/logout/"]
+
+
+
