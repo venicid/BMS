@@ -1,42 +1,41 @@
-
 {#页码#}
-    <nav aria-label="Page navigation">
-        <ul class="pagination">
+<nav aria-label="Page navigation">
+    <ul class="pagination">
 
-            {#        上一页#}
-            {% if current_page.has_previous %}
-                <li>
-                    <a href="?page={{ current_page.previous_page_number }}" aria-label="Previous"><span
-                            aria-hidden="true">上一页</span></a>
-                </li>
+        {#        上一页#}
+        {% if current_page.has_previous %}
+            <li>
+                <a href="?page={{ current_page.previous_page_number }}" aria-label="Previous"><span
+                        aria-hidden="true">上一页</span></a>
+            </li>
+        {% else %}
+            <li class="disabled">
+                <a href="" aria-label="Previous"><span aria-hidden="true">上一页</span></a>
+            </li>
+        {% endif %}
+
+
+        {#中间数字部分#}
+        {% for item in page_range %}
+            {% if item == current_page_num %}
+                <li class="active"><a href="?page={{ item }}">{{ item }}</a></li>
             {% else %}
-                <li class="disabled">
-                    <a href="" aria-label="Previous"><span aria-hidden="true">上一页</span></a>
-                </li>
+                <li><a href="?page={{ item }}">{{ item }}</a></li>
             {% endif %}
+        {% endfor %}
 
 
-            {#中间数字部分#}
-            {% for item in page_range %}
-                {% if item == current_page_num %}
-                    <li class="active"><a href="?page={{ item }}">{{ item }}</a></li>
-                {% else %}
-                    <li><a href="?page={{ item }}">{{ item }}</a></li>
-                {% endif %}
-            {% endfor %}
+        {#    下一页#}
+        {% if current_page.has_next %}
+            <li>
+                <a href="?page={{ current_page.next_page_number }}" aria-label="Next"><span
+                        aria-hidden="true">下一页</span></a>
+            </li>
+        {% else %}
+            <li class="disabled">
+                <a href="" aria-label="Next"><span aria-hidden="true">下一页</span></a>
+            </li>
+        {% endif %}
 
-
-            {#    下一页#}
-            {% if current_page.has_next %}
-                <li>
-                    <a href="?page={{ current_page.next_page_number }}" aria-label="Next"><span
-                            aria-hidden="true">下一页</span></a>
-                </li>
-            {% else %}
-                <li class="disabled">
-                    <a href="" aria-label="Next"><span aria-hidden="true">下一页</span></a>
-                </li>
-            {% endif %}
-
-        </ul>
-    </nav>
+    </ul>
+</nav>

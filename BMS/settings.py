@@ -48,7 +48,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # 添加用户认证中间件
-    'login_reg.auth_middleware.AuthMiddleware'
+    'login_reg.auth_middleware.AuthMiddleware',
 ]
 
 
@@ -121,6 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 # 静态文件目录
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
@@ -147,5 +148,20 @@ LOGGING = {
 }
 
 
-# 设置白名单
+LOGIN_URL = "/"
+
+# 设置登录注册白名单
 WHITE_LIST = ["/", "/login/", "/reg/", "/logout/"]
+
+
+# 设置book白名单
+BOOK_WHITE_LIST = [
+    '/book/index/',
+    '/book/book_list/',
+    '/book/add_book/',
+    '/book/author_list/',
+    '/book/add_author/',
+    '/book/publish_list/',
+    '/book/add_publish/',
+    '/book/edit_book/(\d+)/',
+]

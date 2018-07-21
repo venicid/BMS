@@ -1,52 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends 'login_reg/base.html' %}
+
+{% block title %}
     <title>BMS</title>
-    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.css">
-</head>
-<body>
-<nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/book/index/">Book Management System</a>
-        </div>
+{% endblock %}
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="/login/">Sign in</a>
-                </li>
-                <li class="dropdown">
-                    <a href="/reg/">Sign up</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="jumbotron">
-                <h1>Book Management System</h1>
-                <p>It combines the knowledge of management science, system science, operations research,
-                    statistics, computer science and other disciplines. The three elements of library management system
-                    can be
-                    simplified and simplified: system viewpoint, mathematical method and computer application.</p>
-                <h2>Demand</h2>
-                <p> 1. list book list, publisher list and author list.</p>
-                <p> 2. click the author and list the list of books published.</p>
-                <p> 3. click the press and list the list of books</p>
-                <p>4. we can create, modify and delete books, authors and publishers.</p>
+{% block site-body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="jumbotron">
+                    <h1>Book Management System</h1>
+                    <p>It combines the knowledge of management science, system science, operations research,
+                        statistics, computer science and other disciplines. The three elements of library management
+                        system
+                        can be
+                        simplified and simplified: system viewpoint, mathematical method and computer application.</p>
+                    <h2>Demand</h2>
+                    <p> 1. list book list, publisher list and author list.</p>
+                    <p> 2. click the author and list the list of books published.</p>
+                    <p> 3. click the press and list the list of books</p>
+                    <p>4. we can create, modify and delete books, authors and publishers.</p>
 
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-</body>
-</html>
-
-
-
+{% endblock %}

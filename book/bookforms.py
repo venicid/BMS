@@ -51,19 +51,7 @@ class PublishForm(forms.Form):
 
 
 class BookForm(forms.Form):
-
-    def get_choice(obj):
-        """得到select框的所有choices"""
-        obj_list = []
-        for item in obj:
-            obj_list.append((item.id, item.name))
-        return tuple(obj_list)
-
-    publish_list = Publish.objects.all()
-    author_list = Author.objects.all()
-    publish_choice = get_choice(publish_list)
-    author_choice = get_choice(author_list)
-
+    """编辑书籍验证，select框关联字段验证出错，取消，只验证前3个字段"""
     title = forms.CharField(label="书名", max_length=32,
                             error_messages={'required': '该字段不能为空', 'max_length': '不能超过32个字符'},
                             widget=widgets.TextInput(attrs={'class': 'form-control'}),
@@ -74,11 +62,3 @@ class BookForm(forms.Form):
                                )
     pub_date = forms.DateField(label="出版日期", error_messages={'required': '该字段不能为空'},
                                widget=widgets.TextInput(attrs={'type': 'date', 'class': 'form-control'}))
-    publish = forms.ChoiceField(label="出版社", choices=publish_choice,
-                              error_messages={'required': '该字段不能为空', },
-                              widget=widgets.Select(attrs={'class': 'form-control'}),
-                              )
-    authors = forms.MultipleChoiceField(label="作者", choices=author_choice,
-                              error_messages={'required': '该字段不能为空', },
-                              widget=widgets.SelectMultiple(attrs={'class': 'form-control'}),
-                              )

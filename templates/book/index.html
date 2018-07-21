@@ -1,17 +1,19 @@
-{% extends 'base.html' %}
+{% extends 'book/base.html' %}
 
 {% block title %}
     <title>主页-BMS</title>
 {% endblock %}
 
-{% block site-header %}
-    {% include '../boxTop.html' %}
-{% endblock %}
-
-{% block leftBox %}
-    {% include '../boxLeft.html' %}
-{% endblock %}
 
 {% block rightBox %}
-    {% include './index-right.html' %}
+    <div class="jumbotron" style="margin: 30px">
+        <h1>Welcome to BMS</h1>
+        <p>Book management system is a development platform, inspired by the way your library works. From open
+            source to business, you can view and add, delete books, and enjoy the extraordinary with millions of
+            other users.</p>
+        <p style="overflow: hidden">
+            <a class="btn btn-primary btn-lg pull-right" href="https://baike.baidu.com/item/图书管理系统" role="button">Read
+                more</a>
+        </p>
+    </div>
 {% endblock %}

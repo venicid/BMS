@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    .menu > li {
+    margin: 30px auto;
+    }
+
+    .menu > li a {
+    border: 1px solid darkgray;
+    }
+    .form-group span{
+    color:red
+    }
+{% endblock %}
+
+{% block site-header %}
+    {% include 'book/boxTop.html' %}
+{% endblock %}
+
+
+{% block site-body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                {% include 'book/boxLeft.html' %}
+            </div>
+
+            <div class="col-md-10">
+                {% block rightBox %}
+
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

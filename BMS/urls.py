@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
-
+from login_reg import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^', include(("login_reg.urls", "login_reg"))),
     re_path(r'^book/', include(("book.urls", "book"))),
+    # 404
+    # re_path(r'^.*/$', views.error, name='error'),
 ]

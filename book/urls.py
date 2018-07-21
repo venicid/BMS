@@ -24,4 +24,6 @@ urlpatterns = [
     re_path('^edit_publish/(\d+)/$', views.edit_publish, name='edit_publish'),
     re_path('^delete_publish/(\d+)/$', views.delete_publish, name='delete_publish'),
 
+    # 404
+    # re_path(r'^.*/$', views.error, name='error'),
 ]

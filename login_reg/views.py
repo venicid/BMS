@@ -57,3 +57,7 @@ def logout(request):
 
     return redirect(next_url)
 
+
+def error(request):
+    """404页面"""
+    return render(request, 'login_reg/404.html')

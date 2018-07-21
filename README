@@ -10,3 +10,20 @@
 1.满足需求1，2，3，4 得分85
 2.代码写的健壮、清晰，页面效果实现的好，得分90-95
 
+<style type="text/css">
+    .navbar {
+        border-radius: 0;
+    }
+
+    .menu > li {
+        margin: 30px auto;
+    }
+
+    .menu > li a {
+        border: 1px solid darkgray;
+    }
+
+    .form-group > span {
+        color: red;
+    }
+</style>
