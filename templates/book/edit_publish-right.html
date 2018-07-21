@@ -1,18 +1,21 @@
 <div class="col-md-8 col-md-offset-2">
     <h2>Edit a Publish</h2>
-    <form action="" method="post">
+    <form action="" method="post" novalidate>
         {% csrf_token %}
         <div class="form-group">
             <label for="">名称</label>
             <input type="text" class="form-control" name="name" value="{{ publish_obj.name }}">
+            <span class="pull-right">{{ form.name.errors.0 }}</span>
         </div>
         <div class="form-group">
             <label for="">所在地</label>
             <input type="text" class="form-control" name="city" value="{{ publish_obj.city }}">
+            <span class="pull-right">{{ form.city.errors.0 }}</span>
         </div>
         <div class="form-group">
             <label for="">邮箱</label>
             <input type="text" class="form-control" name="email" value="{{ publish_obj.email }}">
+            <span class="pull-right">{{ form.email.errors.0 }}</span>
         </div>
         <input type="submit" class="btn btn-success pull-right">
     </form>

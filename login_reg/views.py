@@ -14,8 +14,14 @@ def reg(request):
     """注册"""
     if request.method == "POST":
         form = UserForm(request.POST)
-        print(form)
+
         if form.is_valid():
+            username = request.POST.get("username")
+            # username = form.cleaned_data.get('username')  # <QuerySet []>？
+            password = form.cleaned_data.get('password')
+            email = form.cleaned_data.get('email')
+
+            user = User.objects.create_user(username=username, password=password, email=email)
             next_url = reverse('login_reg:login')
             return redirect(next_url)
         else:

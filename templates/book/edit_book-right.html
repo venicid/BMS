@@ -1,18 +1,21 @@
 <div class="col-md-8 col-md-offset-2">
     <h2>Edit a Book</h2>
-    <form action="" method="post">
+    <form action="" method="post" novalidate>
         {% csrf_token %}
         <div class="form-group">
             <label for="">书籍名称</label>
             <input type="text" class="form-control" name="title" value={{ book_obj.title }}>
+            <span class="pull-right">{{ form.title.errors.0 }}</span>
         </div>
         <div class="form-group">
             <label for="">价格</label>
             <input type="text" class="form-control" name="price" value={{ book_obj.price }}>
+            <span class="pull-right">{{ form.price.errors.0 }}</span>
         </div>
         <div class="form-group">
             <label for="">出版日期</label>
             <input type="date" class="form-control" name="pub_date" value={{ book_obj.pub_date|date:'Y-m-d' }}>
+            <span class="pull-right">{{ form.pub_date.errors.0 }}</span>
         </div>
         <div class="form-group">
             <label for="">出版社</label>
@@ -23,9 +26,9 @@
                     {% else %}
                         <option value="{{ publish.pk }}">{{ publish.name }}</option>
                     {% endif %}
-
                 {% endfor %}
             </select>
+            <span class="pull-right">{{ form.publish.errors.0 }}</span>
         </div>
         <div class="form-group">
             <label for="">作者</label>
@@ -38,6 +41,7 @@
                     {% endif %}
                 {% endfor %}
             </select>
+            <span class="pull-right">{{ form.authors.errors.0 }}</span>
         </div>
         <input type="submit" class="btn btn-success pull-right">
     </form>
