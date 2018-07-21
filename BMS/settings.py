@@ -152,16 +152,3 @@ LOGIN_URL = "/"
 
 # 设置登录注册白名单
 WHITE_LIST = ["/", "/login/", "/reg/", "/logout/"]
-
-
-# 设置book白名单
-BOOK_WHITE_LIST = [
-    '/book/index/',
-    '/book/book_list/',
-    '/book/add_book/',
-    '/book/author_list/',
-    '/book/add_author/',
-    '/book/publish_list/',
-    '/book/add_publish/',
-    '/book/edit_book/(\d+)/',
-]

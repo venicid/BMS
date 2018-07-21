@@ -12,6 +12,4 @@ urlpatterns = [
     re_path(r'^login/$', views.login, name='login'),
     re_path(r'^reg/$', views.reg, name='reg'),
     re_path(r'^logout/$', views.logout, name='logout'),
-    # 404
-    # re_path(r'^.*/$', views.error, name='error'),
 ]
