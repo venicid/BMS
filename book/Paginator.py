@@ -16,15 +16,11 @@ def mypaginator(book_list, current_page_num, show_data_num, show_page_num):
     if all_page_num > show_page_num:
         if current_page_num < half_page + 1:
             page_range = range(1, show_page_num + 1)
-            print('头部', page_range)
         elif current_page_num > all_page_num - half_page:
             page_range = range(all_page_num - show_page_num + 1, all_page_num + 1)
-            print('尾部', page_range)
         else:
             page_range = range(current_page_num - half_page, current_page_num + half_page + 1)
-            print('中间', page_range)
     else:
         page_range = range(1, all_page_num + 1)
-        print('1', page_range)
 
     return page_range, current_page

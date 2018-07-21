@@ -26,11 +26,11 @@ def reg(request):
             email = form.cleaned_data.get('email')
 
             user = User.objects.create_user(username=username, password=password, email=email)
-            logger.info("[用户%s注册成功]" % username)
+            logger.info("用户[%s]注册成功" % username)
             next_url = reverse('login_reg:login')
             return redirect(next_url)
         else:
-            logger.error("[用户%s注册失败]" % username)
+            logger.error("用户[%s]注册失败" % username)
             errors = form.errors.get("__all__")
             return render(request, './login_reg/reg.html', locals())
 
@@ -49,11 +49,11 @@ def login(request):
         auth_user = auth.authenticate(username=username, password=password)
         if auth_user:
             auth.login(request, auth_user)    # request.user == username
-            logger.info("[用户%s登录成功]" % username)
+            logger.info("用户[%s]登录成功" % username)
             next_url = reverse('book:index')
             return redirect(next_url, locals())
         else:
-            logger.error("[用户%s登录失败]" % username)
+            logger.error("用户[%s]登录失败" % username)
             error_msg = 'Error username or password'
             return render(request, "./login_reg/login.html", locals())
 
@@ -63,7 +63,7 @@ def login(request):
 def logout(request):
     """登出"""
     logger.info("进入 [login_reg:logout]")
-    logger.info("[用户%s退出]" % request.user.username)
+    logger.info("用户[%s]退出" % request.user.username)
 
     auth.logout(request)
     next_url = reverse('login_reg:index')
