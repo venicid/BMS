@@ -9,6 +9,7 @@ logger = mylog.log_handle('login_reg')
 
 def index(request):
     """输入网址,网站首页"""
+
     logger.info("进入 [login_reg:index]")
     return render(request, './login_reg/index.html')
 
