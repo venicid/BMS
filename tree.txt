@@ -1,0 +1,114 @@
+BMS
+│  db.sqlite3           # 数据库文件
+│  manage.py
+│  README
+│  tree.txt             # 项目所有文件说明
+│  requirements.txt     # 依赖包
+│
+├─BMS
+│  │  settings.py
+│  │  urls.py
+│  │  wsgi.py
+│  └─ __init__.py
+│
+│          
+├─book
+│  │  admin.py
+│  │  apps.py
+│  │  bookforms.py
+│  │  models.py
+│  │  Paginator.py
+│  │  tests.py
+│  │  urls.py
+│  │  views.py
+│  │  __init__.py
+│  │  
+│  ├─migrations
+│  │  │  0001_initial.py
+│  │  │  0002_auto_20180718_1050.py
+│  │  │  0003_auto_20180718_1059.py
+│  │  │  0004_auto_20180718_1101.py
+│  │  └─ __init__.py
+│
+│
+│          
+├─log
+│  │  book.log
+│  │  login_reg.log
+│  └─ mylog.py
+│          
+├─login_reg
+│  │  admin.py
+│  │  apps.py
+│  │  auth_middleware.py
+│  │  loginforms.py
+│  │  models.py
+│  │  tests.py
+│  │  urls.py
+│  │  views.py
+│  │  __init__.py
+│  │  
+│  ├─migrations
+│  │  └─__init__.py
+│
+│
+│          
+├─static
+│  ├─bootstrap-3.3.7
+│  │  ├─css
+│  │  │      bootstrap-theme.css
+│  │  │      bootstrap-theme.css.map
+│  │  │      bootstrap-theme.min.css
+│  │  │      bootstrap-theme.min.css.map
+│  │  │      bootstrap.css
+│  │  │      bootstrap.css.map
+│  │  │      bootstrap.min.css
+│  │  │      bootstrap.min.css.map
+│  │  │      
+│  │  ├─fonts
+│  │  │      glyphicons-halflings-regular.eot
+│  │  │      glyphicons-halflings-regular.svg
+│  │  │      glyphicons-halflings-regular.ttf
+│  │  │      glyphicons-halflings-regular.woff
+│  │  │      glyphicons-halflings-regular.woff2
+│  │  │      
+│  │  └─js
+│  │          bootstrap.js
+│  │          bootstrap.min.js
+│  │          npm.js
+│  │          
+│  ├─img
+│  │      favicon.ico
+│  │      
+│  ├─jQuery
+│  │      jquery-3.2.1.min.js
+│  │      
+│  └─js
+└─templates
+    │  base.html
+    │  
+    ├─book
+    │      add_author.html
+    │      add_book.html
+    │      add_publish.html
+    │      author2book.html
+    │      base.html
+    │      boxLeft.html
+    │      boxTop.html
+    │      edit_author.html
+    │      edit_book.html
+    │      edit_publish.html
+    │      index.html
+    │      listAuthor.html
+    │      listBook.html
+    │      listPublish.html
+    │      paginator.html
+    │      publish2book.html
+    │      
+    └─login_reg
+            404.html
+            base.html
+            boxTop.html
+            index.html
+            login.html
+            reg.html
