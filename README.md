@@ -31,6 +31,9 @@
 6、github地址：
 	[https://github.com/venicid/BMS]
 
+7、效果图
+
+   ![BMS效果图](https://github.com/venicid/BMS/blob/master/img-floder/book_index.png)
 
 ### 二、需求与功能
 
