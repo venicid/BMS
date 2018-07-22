@@ -11,7 +11,7 @@
     flow.png          项目流程图
     tree.txt          该项目的所有文件
     requirements.txt  依赖包文件
-    drawing           项目效果图
+    img-floder        项目效果图
 
 2、环境安装：
     请您在python官网下载python3.5以上版本进行安装。
