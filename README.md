@@ -8,6 +8,7 @@
 联系邮箱：liangshuo1994@outlook.com
 
 **注意事项：**
+    
 1、相关文件说明：
     flow.png          项目流程图
     tree.txt          该项目的所有文件
@@ -32,12 +33,14 @@
 ### 二、需求与功能
 
 1、需求
+
     1) 列出图书列表、出版社列表、作者列表
     2) 点击作者，会列出其出版的图书列表
     3) 点击出版社，会列出其下的图书列表
     4) 可以创建、修改、删除 图书、作者、出版社
 
 2、功能实现概述
+
     login_reg模块
         1) 主页
             /
@@ -47,7 +50,6 @@
             /login/
         4) 注销
             /logout/
-
     book模块
         1)图书主页
             /book/index/
@@ -97,10 +99,11 @@
 	import logging
 	
 5、模板继承
-	{% extends 'base.html' %}
+
+        {% extends 'base.html' %}
 
 	{% block site-header %}
-    {% endblock %}
+        {% endblock %}
 
 	
 6、ORM表关系
