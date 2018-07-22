@@ -26,12 +26,10 @@
 4、测试用例文档给您提供了更好的测试思路，您可以通过测试用例达到更好的测试效果
 
 5、该项目博客地址:
-
-    http://www.cnblogs.com/venicid/p/9286796.html
+	[http://www.cnblogs.com/venicid/p/9286796.html]
 
 6、github地址：
-
-    https://github.com/venicid/BMS
+	[https://github.com/venicid/BMS]
 
 	
 ### 二、需求与功能
